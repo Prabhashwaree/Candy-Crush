@@ -44,6 +44,36 @@ function startGame(){
 }
 
 
+function checkValid(){
+
+    // checkRows
+    for(let r=0; r<row; r++){
+        for(let c=0; c<col-2; c++){
+            let candy1 = board[r][c];
+            let candy2 = board[r][c+1];
+            let candy3 = board[r][c+2];
+            
+            if(candy1.src==candy2.src && candy2.src==candy3.src && ! candy1.src.include("blank")){
+                return true;
+            }
+        }
+    }
+
+
+     // checkColum
+     for(let r=0; r<col; r++){
+        for(let c=0; c<row-2; c++){
+            let candy1 = board[r][c];
+            let candy2 = board[r+1][c];
+            let candy3 = board[r+2][c];
+            
+            if(candy1.src==candy2.src && candy2.src==candy3.src && ! candy1.src.include("blank")){
+                return true;
+            }
+        }
+    }
+}
+
 
 
 //   function
@@ -71,6 +101,20 @@ function dragEnd(){
     let g=parseInt(otherCurrCoords[1]);
 
     let moveLeft = g==b-1 && a==e;
-    let moveDown = g==b+1 && a==e;
-    
+    let moveRight = g==b+1 && a==e;
+
+    let moveUp = e==a-1 && b==g;
+    let moveDown = e==a+1 && b==g;
+
+    let near = moveLeft || moveRight || moveUp || moveDown;
+
+    if(near){
+        let candyImg = currTile.src;
+        let otherImg = otherTile.src;
+
+        currTile.src = candyImg;
+        otherTile.src = candyImg;
+
+        let valedMove = chake
+    }
 }
