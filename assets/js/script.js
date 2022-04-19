@@ -9,6 +9,15 @@ var otherTile;
 
 window.onload=function(){
     startGame();
+
+
+    window.setInterval(function(){
+        generateCandy();
+        slideCandy();
+        crushTree();
+    },100);
+    
+
 }
 
 
@@ -78,15 +87,29 @@ function checkValid(){
 
 //   function
 
-function dragStart(){}
-function dragOver(){}
-function dragEnter(){}
-function dragLeave(){}
-function dragDrop(){}
+function dragStart(){
+    currTile = this;
+}
+
+function dragOver(e){
+    e.preventDefault();
+}
+
+function dragEnter(e){
+    e.preventDefault();
+}
+
+function dragLeave(){
+
+}
+
+function dragDrop(){
+    otherTile = this;
+}
 
 
 function dragEnd(){
-    if(currTile.src.include("blank" || otherTile.src.include("blank"))){
+    if(currTile.src.includes("blank" || otherTile.src.includes("blank"))){
             return;
             
     }
@@ -112,9 +135,90 @@ function dragEnd(){
         let candyImg = currTile.src;
         let otherImg = otherTile.src;
 
-        currTile.src = candyImg;
+        currTile.src = otherImg;
         otherTile.src = candyImg;
 
-        let valedMove = chake
+        let validMove = checkValid();
+
+        if(! validMove){
+            let candyImg = currTile.src;
+            let otherImg = otherTile.src;
+
+            currTile.src = otherImg;
+            otherTile.src = candyImg;
+        }
     }
 }
+
+
+
+function generateCandy(){
+    for (let index = 0; index < col; index++) {
+        if(board[0][index].src.includes("blank")){
+            board[0][index].src="./assets/images/"+randomCandy()+".png";
+        }
+        
+    }
+}
+
+function slideCandy(){
+    for (let i = 0; i < col; i++) {
+       let n = row-1;
+       
+       for (let r = col-1; r>=0; r--) {
+          if(! board[r][i].src.includes("blank")){
+                board[n][i].src = board[r][i].src;
+                n-= 1;
+
+          }
+           
+       }
+
+       for (let co = 0; co < col; co++) {
+          if(board[0][co].src.includes("blank")){
+                board[0][co].src  = "./assets/images/";
+          }
+           
+       }
+        
+    }
+}
+
+
+
+function crushTree(){
+    // checkRows
+    for(let r=0; r<row; r++){
+        for(let c=0; c<col-2; c++){
+            let candy1 = board[r][c];
+            let candy2 = board[r][c+1];
+            let candy3 = board[r][c+2];
+            
+            if(candy1.src==candy2.src && candy2.src==candy3.src && ! candy1.src.include("blank")){
+               candy1.src = "./assets/images/blank.png";
+               candy2.src = "./assets/images/blank.png";
+               candy3.src = "./assets/images/blank.png";
+
+            }
+        }
+    }
+
+
+     // checkColum
+     for(let r=0; r<col; r++){
+        for(let c=0; c<row-2; c++){
+            let candy1 = board[r][c];
+            let candy2 = board[r+1][c];
+            let candy3 = board[r+2][c];
+            
+            if(candy1.src==candy2.src && candy2.src==candy3.src && ! candy1.src.include("blank")){
+                candy1.src = "./assets/images/blank.png";
+                candy2.src = "./assets/images/blank.png";
+                candy3.src = "./assets/images/blank.png";
+            }
+        }
+    }
+}
+
+
+
