@@ -62,7 +62,7 @@ function checkValid(){
             let candy2 = board[r][c+1];
             let candy3 = board[r][c+2];
             
-            if(candy1.src==candy2.src && candy2.src==candy3.src && ! candy1.src.include("blank")){
+            if(candy1.src==candy2.src && candy2.src==candy3.src && ! candy1.src.includes("blank")){
                 return true;
             }
         }
@@ -76,7 +76,7 @@ function checkValid(){
             let candy2 = board[r+1][c];
             let candy3 = board[r+2][c];
             
-            if(candy1.src==candy2.src && candy2.src==candy3.src && ! candy1.src.include("blank")){
+            if(candy1.src==candy2.src && candy2.src==candy3.src && ! candy1.src.includes("blank")){
                 return true;
             }
         }
@@ -109,7 +109,7 @@ function dragDrop(){
 
 
 function dragEnd(){
-    if(currTile.src.includes("blank" || otherTile.src.includes("blank"))){
+    if(currTile.src.includes("blank") || otherTile.src.includes("blank")){
             return;
             
     }
@@ -194,7 +194,7 @@ function crushTree(){
             let candy2 = board[r][c+1];
             let candy3 = board[r][c+2];
             
-            if(candy1.src==candy2.src && candy2.src==candy3.src && ! candy1.src.include("blank")){
+            if(candy1.src==candy2.src && candy2.src==candy3.src && ! candy1.src.includes("blank")){
                candy1.src = "./assets/images/blank.png";
                candy2.src = "./assets/images/blank.png";
                candy3.src = "./assets/images/blank.png";
@@ -211,7 +211,7 @@ function crushTree(){
             let candy2 = board[r+1][c];
             let candy3 = board[r+2][c];
             
-            if(candy1.src==candy2.src && candy2.src==candy3.src && ! candy1.src.include("blank")){
+            if(candy1.src==candy2.src && candy2.src==candy3.src && ! candy1.src.includes("blank")){
                 candy1.src = "./assets/images/blank.png";
                 candy2.src = "./assets/images/blank.png";
                 candy3.src = "./assets/images/blank.png";
