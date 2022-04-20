@@ -151,7 +151,7 @@ body{
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgb(87, 198, 226);
+    background-color: lightblue;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 50px 100px 100px;
     /* border-radius: 20%; */
 
@@ -183,7 +183,7 @@ body{
 
 }
 
-#countLoading{
+/* #countLoading{
     width: 30%;
     height: 28%;
     position: absolute;
@@ -194,9 +194,9 @@ body{
     /* border: 1px solid red; */
     /* box-shadow: rgba(214, 36, 158, 0.56) 0px 50px 100px 100px; */
     border-radius: 10%;
-}
+} */
 
-#countMoveloading{
+/* #countMoveloading{
     width: 10%;
     height: 26%;
     position: absolute;
@@ -207,9 +207,9 @@ body{
     /* border: 1px solid red; */
     /* box-shadow: rgba(34, 2, 24, 0.56) 0px 50px 100px 100px; */
     border-radius: 10%; 
-}
+} */
 
-#curcleCount{
+/* #curcleCount{
     width:17%;
     height: 87%;
     position: absolute;
@@ -220,7 +220,7 @@ body{
     /* border: 1px solid red; */
     /* box-shadow: rgba(34, 2, 24, 0.56) 0px 50px 100px 100px; */
     border-radius: 100%; 
-}
+} */
 
 
 
