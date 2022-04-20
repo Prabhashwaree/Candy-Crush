@@ -170,58 +170,30 @@ body{
 }
 
 #smallRectangle{
-    width: 30%;
-    height: 10%;
+    width: 10%;
+    height: 20%;
     position: absolute;
-    top: 3%;
-    left: 35%;
+    top: 6%;
+    left: 5%;
     margin: auto;
-    background-color: transparent;
-    border: 1px solid rgb(3, 7, 46);
-    /* box-shadow: rgba(177, 6, 123, 0.56) 0px 50px 100px 100px; */
-    border-radius: 20%;
+    background-color: #876e86;
+    border: 1px solid #ffffff;
+    box-shadow: rgba(46, 4, 40, 0.836) 0px 50px 100px 100px;
+    border-radius: 100%;
 
 }
 
-/* #countLoading{
-    width: 30%;
-    height: 28%;
+
+#purpleSercle{
+    width: 80%;
+    height: 80%;
     position: absolute;
-    top: 35%;
-    left: 8%;
+    top: 6%;
+    left: 5%;
     margin: auto;
-    background-color: transparent;
-    /* border: 1px solid red; */
-    /* box-shadow: rgba(214, 36, 158, 0.56) 0px 50px 100px 100px; */
-    border-radius: 10%;
-} */
+    background-color: #631d57;
+    border: 1px solid rgb(255, 255, 255);
+    /* box-shadow: rgba(168, 38, 151, 0.836) 0px 50px 100px 100px; */
+    border-radius: 100%;
 
-/* #countMoveloading{
-    width: 10%;
-    height: 26%;
-    position: absolute;
-    top: 35%;
-    left: 8%;
-    margin: auto;
-    /* background-color: blue; */
-    /* border: 1px solid red; */
-    /* box-shadow: rgba(34, 2, 24, 0.56) 0px 50px 100px 100px; */
-    border-radius: 10%; 
-} */
-
-/* #curcleCount{
-    width:17%;
-    height: 87%;
-    position: absolute;
-    top: 10%;
-    left: 45%;
-    margin: auto;
-    background-color: transparent;
-    /* border: 1px solid red; */
-    /* box-shadow: rgba(34, 2, 24, 0.56) 0px 50px 100px 100px; */
-    border-radius: 100%; 
-} */
-
-
-
-
+}

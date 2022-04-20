@@ -6,15 +6,18 @@ var row=9;
 var currTile;
 var otherTile;
 
+var score=0;
 
 window.onload=function(){
     startGame();
 
 
     window.setInterval(function(){
+        scoreJelly();
         generateCandy();
         slideCandy();
-        crushTree();
+        // crushTree();
+        // score();
     },100);
     
 
@@ -204,14 +207,15 @@ function crushTree(){
                candy2.src = "./assets/images/blank.png";
                candy3.src = "./assets/images/blank.png";
 
+               score+=10;
             }
         }
     }
 
 
      // checkColum
-     for(let r=0; r<col; r++){
-        for(let c=0; c<row-2; c++){
+     for(let c=0; c<col; c++){
+        for(let r=0; r<row-2; r++){
             let candy1 = board[r][c];
             let candy2 = board[r+1][c];
             let candy3 = board[r+2][c];
@@ -220,9 +224,17 @@ function crushTree(){
                 candy1.src = "./assets/images/blank.png";
                 candy2.src = "./assets/images/blank.png";
                 candy3.src = "./assets/images/blank.png";
+
+                score+=10;
             }
         }
     }
+}
+
+
+function scoreJelly(){
+    crushTree();
+    document.getElementById("score").innerText=score;
 }
 
 
