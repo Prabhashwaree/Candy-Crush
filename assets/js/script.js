@@ -44,10 +44,13 @@ function startGame(){
 
         document.getElementById("dashBoard").append(tittle);
         row.push(tittle);
+        
+        
        }
        board.push(row);
        console.log(board);
 
+      
         
     }
 }
@@ -70,8 +73,8 @@ function checkValid(){
 
 
      // checkColum
-     for(let r=0; r<col; r++){
-        for(let c=0; c<row-2; c++){
+     for(let c=0; c<col; c++){
+        for(let r=0; r<row-2; r++){
             let candy1 = board[r][c];
             let candy2 = board[r+1][c];
             let candy3 = board[r+2][c];
@@ -81,6 +84,7 @@ function checkValid(){
             }
         }
     }
+    return false;
 }
 
 
@@ -148,6 +152,8 @@ function dragEnd(){
             otherTile.src = candyImg;
         }
     }
+
+    
 }
 
 
@@ -170,14 +176,13 @@ function slideCandy(){
                 board[n][i].src = board[r][i].src;
                 n-= 1;
 
+
           }
            
        }
 
-       for (let co = 0; co < col; co++) {
-          if(board[0][co].src.includes("blank")){
-                board[0][co].src  = "./assets/images/";
-          }
+       for (let r = n; r >= 0; r--) {
+            board[r][i].src  = "./assets/images/blank.png";
            
        }
         

@@ -177,7 +177,7 @@ body{
     left: 35%;
     margin: auto;
     background-color: transparent;
-    /* border: 1px solid red; */
+    border: 1px solid rgb(3, 7, 46);
     /* box-shadow: rgba(177, 6, 123, 0.56) 0px 50px 100px 100px; */
     border-radius: 20%;
 
@@ -203,7 +203,7 @@ body{
     top: 35%;
     left: 8%;
     margin: auto;
-    background-color: blue;
+    /* background-color: blue; */
     /* border: 1px solid red; */
     /* box-shadow: rgba(34, 2, 24, 0.56) 0px 50px 100px 100px; */
     border-radius: 10%; 
