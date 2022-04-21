@@ -1,46 +1,579 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="icon" href="assets/images/pngfind.com-crush-soda-png-3932616.png">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Candy Crush</title>
-        <link rel="stylesheet" href="assets/style/style.css">
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <title> Candy Crush </title>
+
+    <link rel="icon" href="assets/images/pngfind.com-crush-soda-png-3932616.png">
+    <link rel="stylesheet" href="assets/style/css/normalize (2).css">
+    <link rel="stylesheet" href="assets/style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+   
+    <style>
+      #topBar{
+        top: 0;
+        width: 99vw;
+        height: 8vh;
+        position: absolute;
+        /* z-index: 1; */
+        background-color: transparent;
+        box-shadow: rgba(102, 98, 98, 0.56) 0px 22px 70px 4px;
+      }
+
+      #bottomBar{
+        bottom: 0;
+        width: 99vw;
+        height: 10vh;
+        position: absolute;
+        /* z-index: 1; */
+        background-color: transparent;
+        box-shadow: rgba(102, 98, 98, 0.56) 0px 22px 70px 4px;
+      }
+
+      #topBar>div:nth-child(1){
+        width: 18vw;
+        height: 6vh;
+        left: 2%;
+        position: relative;
+        top: 6px;
+        /* border: 1px solid rgb(250, 21, 21); */
+        background-color: #00bae6;
+        border-radius: 5px;
+      }
+
+      #seting{
+        right: 20px;
+        position: absolute;
+        top: 3px;
         
-    </head>
+      }
+      #seting:hover{
+        right: 19px;
+        position: absolute;
+        top: 2px;
+        width: 6vw;
+        height: 8vh;
+        box-shadow: rgba(229, 243, 33, 0.849) 0px 22px 70px 4px;
+      }
 
-    <body>
-      <section>
-          <img id="dashboardImg" src="assets/images/85-858735_candy-crush-background.jpg" alt="" width="100%" height="100%">
-        <div id="dashBoard"></div>
-        <img style="z-index: 1;top: 2%;position: absolute; left: 68%;" src="assets/images/d947015873fef71db22d56c4e37c661e.gif" alt="" width="15%" height="28%">
-        <img style="z-index: 1;top: 13%;position: absolute; left: 1%;" src="assets/images/d947015873fef71db22d56c4e37c661e.gif" alt="" width="30%" height="80%">
+      #coins{
+        width: 15%;
+        height: 6vh;
+        right: 100px;
+        top: 7px;
+        background-color: transparent;
+        border-radius: 10%;
+        position: absolute;
+        border: 1px solid white;
+        box-shadow: rgba(12, 190, 202, 0.781) 0px 22px 70px 4px;
+      }
+      #coins>img{
+        right: 150px;
+        position: absolute;
+        top: 7px;
+        border-radius: 100%;
+        width: 2vw;
+        height: 4vh;
+      }
+
+      #coins>h3{
+        right: 78px;
+        position: absolute;
+        top: -11px;
+        border-radius: 100%;
+        color: white;
+       
+      }
+
+      #nos{
+        width: 10%;
+        height: 6vh;
+        right: 310px;
+        top: 7px;
+        background-color: transparent;
+        border-radius: 10%;
+        position: absolute;
+        border: 1px solid white;
+        box-shadow: rgba(12, 190, 202, 0.781) 0px 22px 70px 4px;
+      }
+
+      #nos>img{
+        right: 88px;
+        position: absolute;
+        top: 7px;
+        border-radius: 100%;
+        width: 2vw;
+        height: 4vh;
+      }
+
+      #nos>h3{
+        right: 60px;
+        position: absolute;
+        top: -11px;
+        border-radius: 100%;
+        color: white;
+       
+      }
+
+
+      /* sideOption LEFT */
+
+      #sideOption>div:nth-child(1){
+        width: 5%;
+        height: 11vh;
+        left: 2%;
+        top: 20%;
+        background-color: rgb(0, 0, 0);
+        border-radius: 10%;
+        position: absolute;
+        box-shadow: rgba(212, 182, 7, 0.56) 0px 22px 70px 4px;
+        border: 1px solid white;
+      }
+
+      #sideOption>div:nth-child(1)>img{
+        width: 3vw;
+        height: 3vw;
+        border-radius: 100%;
+        left: 18%;
+        top: 14%;
+        position: absolute;
+      }
+      #sideOption>div:nth-child(1)>img:hover{
+        width: 4vw;
+        height: 4vw;
+        position: absolute;
+      }
+      #sideOption>div:nth-child(1)>h6{
+        left: 15%;
+        top: 40%;
+        position: absolute;
+        color: white;
+      }
+
+
+      #sideOption>div:nth-child(2){
+        width: 5%;
+        height: 11vh;
+        left: 2%;
+        top: 35%;
+        background-color: #0003a1;
+        border-radius: 10%;
+        position: absolute;
+        box-shadow: rgba(38, 7, 212, 0.56) 0px 22px 70px 4px;
+        border: 1px solid white;
+      }
+
+      #sideOption>div:nth-child(2)>img{
+        width: 3vw;
+        height: 3vw;
+        border-radius: 100%;
+        left: 18%;
+        top: 19%;
+        position: absolute;
+      }
+      #sideOption>div:nth-child(2)>img:hover{
+        width: 4vw;
+        height: 4vw;
+        position: absolute;
+      }
+      #sideOption>div:nth-child(2)>h6{
+        left: 15%;
+        top: 41%;
+        position: absolute;
+        color: white;
+      }
+
+
+      #sideOption>div:nth-child(3){
+        width: 5%;
+        height: 11vh;
+        left: 2%;
+        top: 50%;
+        background-color: rgb(2, 116, 21);
+        border-radius: 10%;
+        position: absolute;
+        box-shadow: rgba(4, 156, 68, 0.56) 0px 22px 70px 4px;
+        border: 1px solid white;
+      }
+
+      #sideOption>div:nth-child(3)>img{
+        width: 3vw;
+        height: 3vw;
+        border-radius: 100%;
+        left: 18%;
+        top: 15%;
+        position: absolute;
+      }
+      #sideOption>div:nth-child(3)>img:hover{
+        width: 4vw;
+        height: 4vw;
+        position: absolute;
+      }
+      #sideOption>div:nth-child(3)>h6{
+        left: 7%;
+        top: 42%;
+        position: absolute;
+        color: white;
+      }
+
+
+      #sideOption>div:nth-child(4){
+        width: 5%;
+        height: 11vh;
+        left: 2%;
+        top: 65%;
+        background-color: rgb(207, 204, 18);
+        border-radius: 10%;
+        position: absolute;
+        border: 1px solid white;
+        box-shadow: rgba(204, 241, 67, 0.56) 0px 22px 70px 4px;
+      }
+
+      #sideOption>div:nth-child(4)>img{
+        width: 3vw;
+        height: 3vw;
+        border-radius: 100%;
+        left: 18%;
+        top: 15%;
+        position: absolute;
+      }
+      #sideOption>div:nth-child(4)>img:hover{
+        width: 4vw;
+        height: 4vw;
+        position: absolute;
+      }
+      #sideOption>div:nth-child(4)>h6{
+        left: 18%;
+        top: 40%;
+        position: absolute;
+        color: white;
+      }
+
+
+
+
+      /* bottom bar */
+
+      #bottomBar>div:nth-child(1){
+        width: 9%;
+        height: 6vh;
+        left: 2%;
+        top: 20%;
+        background-color: rgb(52, 23, 61);
+        border-radius: 10%;
+        position: absolute;
+        box-shadow: rgba(214, 45, 230, 0.56) 0px 22px 70px 4px;
+        border: 1px solid rgb(139, 0, 182);
+    
+      }
+
+      #bottomBar>div:nth-child(1)>img{
+        width: 3vw;
+        height: 3vw;
+        /* border-radius: 100%; */
+        left: 10%;
+        top: -8%;
+        position: absolute;
+      }
+
+      #bottomBar>div:nth-child(1)>h5{
+        left: 51%;
+        top: -28%;
+        position: absolute;
+        color: white;
+      }
+
+
+      #bottomBar>div:nth-child(2){
+        width: 9%;
+        height: 6vh;
+        left: 13%;
+        top: 20%;
+        background-color: rgb(66, 58, 68);
+        border-radius: 10%;
+        position: absolute;
+        box-shadow: rgba(182, 180, 182, 0.56) 0px 22px 70px 4px;
+        border: 1px solid rgb(117, 115, 117);
+    
+      }
+
+      #bottomBar>div:nth-child(2)>img{
+        width: 3vw;
+        height: 3vw;
+        /* border-radius: 100%; */
+        left: 8%;
+        top: -6%;
+        position: absolute;
+      }
+
+      #bottomBar>div:nth-child(2)>h5{
+        left: 46%;
+        top: -28%;
+        position: absolute;
+        color: white;
+      }
+
+
+
+
+      /* sideOption right */
+
+      #rightSideOption>div:nth-child(1){
+        width: 5%;
+        height: 11vh;
+        right: 2%;
+        top: 20%;
+        background-color: #f73721;
+        border-radius: 10%;
+        position: absolute;
+        box-shadow: rgba(255, 30, 30, 0.56) 0px 22px 70px 4px;
+        border: 1px solid rgb(255, 255, 255);
+      }
+
+      #rightSideOption>div:nth-child(1)>img{
+        width: 3vw;
+        height: 3vw;
+        border-radius: 100%;
+        right: 18%;
+        top: 10%;
+        position: absolute;
+      }
+      #rightSideOption>div:nth-child(1)>img:hover{
+        width: 4vw;
+        height: 4vw;
+        position: absolute;
+      }
+      #rightSideOption>div:nth-child(1)>h6{
+        right: 13%;
+        top: 40%;
+        position: absolute;
+        color: white;
+      }
+
+
+      #rightSideOption>div:nth-child(2){
+        width: 5%;
+        height: 11vh;
+        right: 2%;
+        top: 35%;
+        background-color: rgb(4, 78, 7);
+        border-radius: 10%;
+        position: absolute;
+        box-shadow: rgba(11, 182, 22, 0.56) 0px 22px 70px 4px;
+        border: 1px solid white;
+      }
+
+      #rightSideOption>div:nth-child(2)>img{
+        width:4vw;
+        height: 3vw;
+        /* border-radius: 100%; */
+        right: 10%;
+        top: 10%;
+        position: absolute;
+      }
+      #rightSideOption>div:nth-child(2)>img:hover{
+        width: 5vw;
+        height: 4vw;
+        position: absolute;
+      }
+      #rightSideOption>div:nth-child(2)>h6{
+        right: 30%;
+        top: 32%;
+        position: absolute;
+        color: white;
+      }
+
+
+      #rightSideOption>div:nth-child(3){
+        width: 5%;
+        height: 11vh;
+        right: 2%;
+        top: 50%;
+        background-color: rgb(13, 2, 73);
+        border-radius: 10%;
+        position: absolute;
+        box-shadow: rgba(67, 21, 235, 0.56) 0px 22px 70px 4px;
+        border: 1px solid white;
+      }
+
+      #rightSideOption>div:nth-child(3)>img{
+        width: 3vw;
+        height: 3vw;
+        border-radius: 100%;
+        right: 18%;
+        top: 10%;
+        position: absolute;
+      }
+      #rightSideOption>div:nth-child(3)>img:hover{
+        width: 4vw;
+        height: 4vw;
+        position: absolute;
+      }
+      #rightSideOption>div:nth-child(3)>h6{
+        right: 18%;
+        top: 37%;
+        position: absolute;
+        color: white;
+      }
+
+
+
+      /* cercle */
+
+      #sercle{
+        width: 10vw;
+        height: 21vh;
+        top: 75%;
+        right: 2%;
+        position: absolute;
+        background-color: transparent;
+        border-radius: 100%;
+        border: 1px solid transparent;
+      }
+      #sercle>img{
+        width: 8vw;
+        height: 18vh;
+        top: 6%;
+        right: 10%;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.877);
+        box-shadow: rgb(182, 194, 14) 0px 22px 70px 4px;
+        border-radius: 100%;
+      }
+
+      #sercle>img:hover{
+        width: 9vw;
+        height: 19vh;
+        position: absolute;
+      }
+
+      #sercle>h1{
+        right: 17%;
+        top: 20%;
+        position: absolute;
+        color: rgb(203, 216, 20);
+        /* z-index: 1; */
+      }
+    </style>
+    
+</head>
+<body>
+  
+
+
+    <section id="dashboardImg">
+        <img src="assets/images/H3OXAGCSDV3L.webp" alt="" style="width: 99vw;height: 100vh;">
+    
+
+
+        <!-- topBar -->
+
+        <section id="topBar">
+            <div><img src="assets/images/pngfind.com-privacy-icon-png-4703547.png" alt="" style="width: 3vw; height: 6vh;top: 1px;left: 15px; position: absolute;"></div>
+            <h3 style="left: 135px;position: absolute;top: -5px;">Nethmini</h3>
+
+            <img src="assets/images/28511_settings_718x718.png" alt="" id="seting" style="width: 5vw; height: 7vh;">
         
-        
+            <div id="coins">
+              <img src="assets/images/american-money-presidential-one-dollar-gold-coin-with-statue-liberty-reverse_218319-7508.webp" alt="">
+              <h3>16,000</h3>
+            </div>
 
-        <!-- <img style="z-index: 1;top: 68%;position: absolute; left: 5%;" src="assets/images/CT9TV6HJ3JFP.webp" alt="" width="20%" height="30%"> -->
-        <audio style="z-index: 1;top: 80%;position: absolute; left: 0%;" controls autoplay width="15%" height="28%">
-          <source src="assets/audio/Candy-Crush-Saga-Theme-Song (1).mp3" type="audio/mpeg">
-        </audio>
+            <div id="nos">
+              <img src="assets/images/Blue-Striped-Horizontal.png" alt="">
+              <h3>5</h3>
+            </div>
+          </section>
 
 
-        <!-- small rectangle -->
 
-        <div id="smallRectangle">
 
-          <div id="purpleSercle">
-            <h1 style="left: 12%;top: 40%;bottom: 0;position: absolute;margin: auto;color: white;"> score <span id="score"></span> </h1>
+          <!-- sideOption -->
+
+          <section id="sideOption">
+            <div>
+              <img src="assets/images/download (1).png" alt="">
+              <h6>REWARD</h6>
+            </div>
+
+            <div>
+              <img src="assets/images/Choco.png" alt="">
+              <h6>FREE Jelly</h6>
+            </div>
+
+            <div>
+              <img src="assets/images/american-money-presidential-one-dollar-gold-coin-with-statue-liberty-reverse_218319-7508.webp" alt="">
+              <h6>FREECOIN</h6>
+            </div>
+
+            <div>
+              <img src="assets/images/ThirdGrossHairstreakbutterfly-max-1mb.gif" alt="">
+              <h6>LUCKY</h6>
+            </div>
+          </section>
+
+
+
+          <!-- Bottom Bar -->
+          
+        <section id="bottomBar">
+          <div>
+            <img src="assets/images/shop-icon-256.png" alt="">
+            <h5>STORE</h5>
           </div>
 
-          <div id="dashBoardBackBoard"></div>
+          <div>
+            <img src="assets/images/YyFy.gif" alt="">
+            <h5>LEVEL</h5>
+          </div>
+        </section>
 
 
+
+
+        <!-- right Side Option -->
+
+        <section id="rightSideOption">
+          <div>
+            <img src="assets/images/image_processing20210827-22715-xkc56z.gif" alt="">
+            <h6>GIFT BAG</h6>
+          </div>
+
+          <div>
+            <img src="assets/images/Green-Wrapped.png" alt="">
+            <h6>$ 0.99</h6>
+          </div>
+
+          <div>
+            <img src="assets/images/no-ads-icon-remove-advertisementsign-mobile-applications-other-ads-free-sign-no-ads-icon-remove-advertisementsign-106003892.jpg" alt="">
+            <h6>NO ADS</h6>
+          </div>
+        </section>
+
+
+
+
+        <!-- sercle -->
+
+        <div id="sercle">
+          <a href="index3.html"><button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" style="width: 10vw;height: 21vh;background-color: red; z-index: 1;border: 1px solid transparent;"></button></a>
+          <!-- <h1 style="color: white;box-shadow: rgb(255, 255, 255) 0px 22px 70px 4px;background-color: black;">PLAY</h1> -->
+          <img src="assets/images/pngfind.com-crush-soda-png-3932616.png" alt="">
+         
         </div>
-        
-        <script src="assets/js/script.js"></script>
+    </section>
 
-      </section>
 
-    </body>
-</html>
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+
+    <script>
+
+       
+
+    </script>
+    
+</body>
+</html> 

@@ -31,7 +31,7 @@ body{
 }
 
 #loginMainImg>img{
-    /* filter: blur(3px); */
+    filter: blur(3px);
 }
 
 #player_save_details{
@@ -137,6 +137,14 @@ body{
 
 
 
+
+/* option section seting */
+
+
+
+
+
+
 /* dashboard game */
 
 #dashBoard{
@@ -177,9 +185,9 @@ body{
 }
 
 #dashboardImg{
-    width: 98.9%;
-    height: 98.9%;
-    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
 }
 
 #dashBoard>img{
