@@ -207,7 +207,7 @@ function crushTree(){
                candy2.src = "./assets/images/blank.png";
                candy3.src = "./assets/images/blank.png";
 
-               score+=10;
+               score+=5;
             }
         }
     }
@@ -225,7 +225,7 @@ function crushTree(){
                 candy2.src = "./assets/images/blank.png";
                 candy3.src = "./assets/images/blank.png";
 
-                score+=10;
+                score+=5;
             }
         }
     }
