@@ -177,11 +177,11 @@ body{
     flex-wrap: wrap;
     top: 340%;
     bottom: 0;
-    left: 245%;
+    left: 229%;
     right: 0;
     background-color: transparent;
     box-shadow: rgba(255, 255, 255, 0.685) 0px 50px 100px 100px;
-    border-radius: 20%; 
+    border-radius: 20%;
 }
 
 #dashboardImg{
